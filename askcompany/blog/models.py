@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
+    author_name = models.CharField(max_length=20, default = 'user1')
     title = models.CharField(max_length=100)
     content = models.TextField()
 

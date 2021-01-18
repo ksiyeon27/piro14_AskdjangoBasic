@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ask Company{% endblock %}</title>
+    <style>
+        body{
+            background-color: lightyellow;
+        }
+    </style>
+    {% block extra_head %}{% endblock %} <!--for css-->
+
+</head>
+<body>
+    <h1>AskCompany</h1>
+
+    {% block content %}
+    {% endblock %}
+
+    <hr/>
+    &copy; 2018. Ask Company . ksiyeon27 
+
+    {% block extra_body %}{% endblock %} <!--for js-->
+</body>
+</html>

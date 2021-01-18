@@ -1,3 +1,4 @@
 django == 2.2.1
 django-extensions == 3.1.0
 django-debug-toolbar == 3.2
+pillow == 8.1.0

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Ask Company{% endblock %}</title>
     <style>
-        body{
-            background-color: lightyellow;
-        }
-    </style>
-    {% block extra_head %}{% endblock %} <!--for css-->
+            </style>
+    
+
+    {% block extra_head %}
+    <link rel="stylesheet" href = "{% static "main.css" %}"/  >
+    {% endblock %} <!--for css-->
 
 </head>
 <body>
     <h1>AskCompany</h1>
 
+
     {% block content %}
+        <script src = "{% static 'main.js' %}"></script>
     {% endblock %}
 
     <hr/>

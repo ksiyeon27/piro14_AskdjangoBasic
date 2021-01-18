@@ -11,5 +11,6 @@ urlpatterns = [
         name="login",
     ),  # 설정 재정의
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("signup/", views.signup, name="signup"),
     path("profile/", views.profile, name="profile"),
 ]

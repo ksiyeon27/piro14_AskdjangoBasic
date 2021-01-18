@@ -20,7 +20,9 @@ def profile(request):
 #             user = form.save()
 #             #  로그인 처리 여기서 해주면 됨
 #             auth_login(request, user)
-#             return redirect("profile")
+#             next_url = request.GET.get("next") or "profile"
+#             # or; 앞이 거짓이면 뒤의 값 사용.
+#             return redirect(next_url)
 #     else:
 #         form = SignupForm()
 #     return render(
@@ -30,6 +32,7 @@ def profile(request):
 #             "form": form,
 #         },
 #     )
+
 
 ##first CBV
 # signup = CreateView.as_view(
@@ -47,7 +50,8 @@ class SignupView(CreateView):
     template_name = "accounts/signup.html"
 
     def get_success_url(self):
-        return resolve_url("profile")
+        next_url = self.request.GET.get("next") or "profile"
+        return resolve_url(next_url)
 
     def form_valid(self, form):
         user = form.save()
